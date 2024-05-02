@@ -1,0 +1,13 @@
+package com.recommendation.model;
+
+import com.recommendation.service.RecommendationService;
+
+public class RecommendationServiceImpl implements RecommendationService {
+
+	@Override
+	public Recommendation makeRecommendation(Long productId, Long userId, int rating) throws Exception {
+		
+		return null;
+	}
+
+}

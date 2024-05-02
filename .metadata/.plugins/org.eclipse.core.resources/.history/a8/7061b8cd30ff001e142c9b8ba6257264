@@ -1,0 +1,87 @@
+package com.recommendation.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table (name = "recommendation")
+public class Recommendation {
+	
+	@Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+    private int rating;
+    
+    private long productId;
+    
+    private long productName;
+    
+    private long userId;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public int getRating() {
+		return rating;
+	}
+
+	public void setRating(int rating) {
+		this.rating = rating;
+	}
+
+	public long getProductId() {
+		return productId;
+	}
+
+	public void setProductId(long productId) {
+		this.productId = productId;
+	}
+
+	public long getProductName() {
+		return productName;
+	}
+
+	public void setProductName(long productName) {
+		this.productName = productName;
+	}
+
+	public long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(long userId) {
+		this.userId = userId;
+	}
+
+	public Recommendation(Long id, int rating, long productId, long productName, long userId) {
+		super();
+		this.id = id;
+		this.rating = rating;
+		this.productId = productId;
+		this.productName = productName;
+		this.userId = userId;
+	}
+
+	public Recommendation() {
+		super();
+	}
+
+	@Override
+	public String toString() {
+		return "Recommendation [id=" + id + ", rating=" + rating + ", productId=" + productId + ", productName="
+				+ productName + ", userId=" + userId + "]";
+	}
+
+    
+    
+
+}

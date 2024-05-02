@@ -1,0 +1,12 @@
+package com.payment.service;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+import com.payment.model.Payment;
+
+@FeignClient(name="ORDER-SERVICE", url="http://localhost:8002")
+public interface PaymentService {
+	
+	Payment makePayment(Payment payment,long orderId, long userId)throws Exception;
+
+}

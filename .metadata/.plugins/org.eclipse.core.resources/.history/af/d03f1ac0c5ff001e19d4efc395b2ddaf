@@ -1,0 +1,50 @@
+server:
+  port: 8005
+
+spring:
+  application:
+    name: Gateway Service
+
+  cloud:
+    gateway:
+      mvc:
+        routes:
+        - id: USER-SERVICE
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/auth/**, /user/**, /api/user/**
+        - id: PRODUCT-CATALOG-SERVICE
+          uri: lb://PRODUCT-CATALOG-SERVICE
+          predicates:
+            - Path=/products/**
+        - id: ORDER-SERVICE
+          uri: lb://ORDER-SERVICE
+          predicates:
+            - Path=/api/orders/**, /orders/**
+        - id: PAYMENT-SERVICE
+          uri: lb://PAYMENT-SERVICE
+          predicates:
+            - Path=/api/payment/**, /payment/**
+        - id: RECOMMENDATION-SERVICE
+          uri: lb://RECOMMENDATION-SERVICE
+          predicates:
+            - Path=/recommend/**
+
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        cors-configurations:
+          '[/**]': 
+            allowedOrigins: "*"  
+            allowedMethods: "*"  
+            allowedHeaders: "*"  
+       
+          
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: http://localhost:9000/eureka/

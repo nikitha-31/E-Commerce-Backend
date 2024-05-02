@@ -1,0 +1,13 @@
+package com.payment.service;
+
+import com.payment.model.Payment;
+
+public class PaymentServiceImpl implements PaymentService {
+
+	@Override
+	public Payment makePayment(long orderId, long userId) {
+		
+		return null;
+	}
+
+}

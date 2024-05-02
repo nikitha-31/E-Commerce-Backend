@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="D:\Spring Boot or Microservices Projects\E-Commerce Project\Recommendation-Service"/>
+			<item value="D:\Spring Boot or Microservices Projects\E-Commerce Project\User-Authentication"/>
+			<item value="D:\Spring Boot or Microservices Projects\E-Commerce Project\Payment"/>
+			<item value="D:\Spring Boot or Microservices Projects\E-Commerce Project\Gateway-Service"/>
+			<item value="D:\Spring Boot or Microservices Projects\E-Commerce Project\Eureka-Service"/>
+			<item value="D:\Spring Boot or Microservices Projects\E-Commerce Project\Gate-Way-Service"/>
+			<item value="D:\Spring Boot or Microservices Projects\E-Commerce Project\Eureka-Impl"/>
+			<item value="D:\Spring Boot or Microservices Projects\E-Commerce Project\Cart-Items"/>
+			<item value="D:\Spring Boot or Microservices Projects\E-Commerce Project\Order-Service"/>
+			<item value="D:\Spring Boot or Microservices Projects\E-Commerce Project\Product-Catlog"/>
+			<item value="D:\Spring Boot or Microservices Projects\E-Commerce Project\User-Service"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+</section>

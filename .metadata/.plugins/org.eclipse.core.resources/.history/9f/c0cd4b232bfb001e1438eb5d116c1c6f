@@ -1,0 +1,61 @@
+package com.order.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.order.model.Order;
+import com.order.model.ProductDto;
+import com.order.repository.OrderRepository;
+
+
+
+@Service
+public class OrderServiceImpl implements OrderService {
+
+	
+	@Autowired
+	private OrderRepository orderRepository;
+	
+	@Autowired
+	private ProductService productService; 
+	
+	
+	@Override
+	public Order orderProduct(Long productId, Long userId, int quantity) throws Exception {
+		ProductDto product=productService.getProductByProductId(productId);
+		if(product!=null) {
+			Order order=new Order();
+			order.setProductId(productId);
+			order.setQuantity(quantity);
+			order.setUserId(userId);
+			return orderRepository.save(order);
+		}
+		throw new Exception("product not found by id"+productId);
+		
+	}
+
+
+	@Override
+	public List<Order> getallOrders(String requestRole) throws Exception {
+		if(!requestRole.equals(("Role_Admin"))) {
+			throw new Exception("only admin can view orders");
+		}
+		return orderRepository.findAll() ;
+		
+	}
+
+
+	@Override
+	public Order getById(Long orderId)throws Exception {
+		Optional<Order> orderOptional = orderRepository.findById(orderId);
+        if (orderOptional.isPresent()) {
+            return orderOptional.get();
+        } else {
+            throw new Exception("No orders");
+        }
+	}
+
+}

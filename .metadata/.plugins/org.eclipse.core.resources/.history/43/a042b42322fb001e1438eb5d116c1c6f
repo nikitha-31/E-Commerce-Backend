@@ -1,0 +1,36 @@
+package com.cart.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.cart.repository.CartRepository;
+import com.order.model.Cart;
+import com.order.model.ProductDto;
+
+
+@Service
+public class CartServiceImpl implements CartService {
+
+	
+	@Autowired
+	private CartRepository cartRepository;
+	
+	@Autowired
+	private ProductService productService; 
+	
+	
+	@Override
+	public Cart addProductsToCart(Long productId, Long userId, int quantity) throws Exception {
+		ProductDto product=productService.getProductByProductId(productId);
+		if(product!=null) {
+			Cart cart=new Cart();
+			cart.setProductId(productId);
+			cart.setQuantity(quantity);
+			cart.setUserId(userId);
+			return cartRepository.save(cart);
+		}
+		throw new Exception("product not found by id"+productId);
+		
+	}
+
+}

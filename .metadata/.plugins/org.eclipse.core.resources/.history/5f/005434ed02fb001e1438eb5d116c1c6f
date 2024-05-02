@@ -1,0 +1,24 @@
+package com.cart.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.cart.model.Cart;
+import com.cart.repository.CartRepository;
+
+
+@Service
+public class CartServiceImpl implements CartService {
+
+	
+	@Autowired
+	private CartRepository cartRepository;
+	
+	
+	@Override
+	public Cart addProductsToCart(Long productId, Long userId, int quantity) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

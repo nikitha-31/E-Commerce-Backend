@@ -1,0 +1,15 @@
+package com.recommendation.service;
+
+import com.recommendation.model.ProductDto;
+import com.recommendation.model.Recommendation;
+
+
+public class RecommendationServiceImpl implements RecommendationService {
+
+	@Override
+	public Recommendation makeRecommendation(Long productId, Long userId, int rating) throws Exception {
+		ProductDto product=productService.getProductByProductId(productId);
+		return null;
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.recommendation.repository;
+
+public interface RecommendationRepository {
+
+}

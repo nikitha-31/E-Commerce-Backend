@@ -1,0 +1,17 @@
+package com.order.service;
+
+
+
+import com.order.model.Order;
+
+public interface OrderService {
+	
+	Order addProductsToCart(Long productId, Long userId,int quantity)throws Exception;
+	
+	
+	
+	
+	
+	
+
+}

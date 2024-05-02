@@ -1,0 +1,16 @@
+package com.recommendation.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.recommendation.model.Recommendation;
+
+import feign.Param;
+
+public interface RecommendationRepository extends JpaRepository<Recommendation, Long>{
+
+	@Query("select r FROM Recommendation r WHERE r.product.productName = :productName")
+    public List<Recommendation> findAllRatingByProductName(@Param("productName") String productName);
+}

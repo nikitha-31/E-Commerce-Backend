@@ -1,0 +1,5 @@
+package com.recommendation.controller;
+
+public class RecommendationController {
+
+}
